@@ -93,4 +93,34 @@ public class DeliveryCenter
             }
         }
     }
+
+
+
+    /*
+      Reference type → Shipment
+      poosible Actual object  → StandardShipment
+     
+      GetTrackingStatus() -> not in (shipment) but in Interface:(ITrackable) 
+      therefore we do casting -> shipment apply ITrackable , deal with it as a ITrackable
+
+     */
+    public void PrintTrackingStatuses()
+    {
+        for (int i = 0; i < shipments.Length; i++)
+        {
+            if (shipments[i] != null)
+            {
+
+                // deal with shipment as a ITrackable 
+                // then store it in var : (trackable) 
+                ITrackable trackable = (ITrackable)shipments[i];
+                
+                Console.WriteLine(trackable.GetTrackingStatus());
+            }
+        }
+    }
+
+
+
+
 }

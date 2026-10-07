@@ -1,6 +1,6 @@
 ﻿namespace c__oop_ass4;
 
-public class ExpressShipment : Shipment
+public class ExpressShipment : Shipment  , ITrackable , IInsurable
 {
     private decimal extraFee;  //new property
 
@@ -50,4 +50,18 @@ public class ExpressShipment : Shipment
         Console.WriteLine("Estimated Cost: " + EstimatedCost);
         Console.WriteLine("Extra Fee: " + ExtraFee);
     }
+
+    // body of method in interface (ITrackable)
+    public string GetTrackingStatus()
+    {
+        return $"Shipment {TrackingCode} is Out for Delivery.";
+    }
+
+
+    // body of method in interface (IInsurable)
+    public decimal CalculateInsurance()
+    {
+        return EstimatedCost * 0.08m;
+    }
+
 }

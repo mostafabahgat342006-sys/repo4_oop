@@ -1,6 +1,6 @@
 ﻿namespace c__oop_ass4;
 
-public class InternationalShipment : Shipment
+public class InternationalShipment : Shipment , ITrackable , IInsurable
 {
     private string destinationCountry;
     private decimal customsFee;
@@ -79,4 +79,23 @@ public class InternationalShipment : Shipment
         Console.WriteLine("Destination Country: " + DestinationCountry);
         Console.WriteLine("Customs Fee: " + CustomsFee);
     }
+
+
+    // body of method in interface (ITrackable)
+    public string GetTrackingStatus()
+    {
+        return $"Shipment {TrackingCode} has been Delivered.";
+    }
+
+
+    // body of method in interface (IInsurable)
+    public decimal CalculateInsurance()
+    {
+        return EstimatedCost * 0.12m;
+    }
+
+
+
+
+
 }

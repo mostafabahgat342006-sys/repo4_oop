@@ -1,6 +1,6 @@
 ﻿namespace c__oop_ass4;
 
-public class Shipment
+public abstract class Shipment
 {
 
     private string trackingCode;
@@ -75,6 +75,9 @@ public class Shipment
 
     public virtual DeliveryAddress Destination { get; set; }
 
+    public abstract decimal EstimatedCost { get; }  // computed property
+
+    /*
     public virtual decimal EstimatedCost   // computed property
     {
         get
@@ -82,6 +85,7 @@ public class Shipment
             return DeliveryFee + ((decimal)Weight * 5);
         }
     }
+    */
 
 
     public Shipment(string trackingCode)    // constructor 
@@ -124,6 +128,9 @@ public class Shipment
 
 
 
+    public abstract void PrintShipment();
+
+    /*
     public virtual void PrintShipment()
     {
         Console.WriteLine("Tracking Code: " + TrackingCode);
@@ -133,4 +140,7 @@ public class Shipment
         Console.WriteLine("Destination: " + Destination.GetFullAddress());
         Console.WriteLine("Estimated Cost: " + EstimatedCost);
     }
+    */
+
+
 }

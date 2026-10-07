@@ -295,9 +295,62 @@ internal class Program
         center.PrintAllShipments();
 
 
+        //--------------------------------------------------------------
+
+        Console.WriteLine("\nTracking Status:");
+
+        DeliveryReport report = new DeliveryReport();
+
+        report.PrintShipment(standard);
+        report.PrintShipment(express);
+        report.PrintShipment(international);
 
 
 
+
+
+        Console.WriteLine("\nInsurance:");
+
+        report.PrintInsurance(standard);
+        report.PrintInsurance(express);
+        report.PrintInsurance(international);
+
+
+      //--------------------------------------------------------------------------------------------
+        
+
+        Console.WriteLine("\nTracking Status Using ITrackable Array:");
+
+        // prove that Interface can gather different objects must but apply same Interface
+        ITrackable[] trackableShipments =
+        {
+            standard,
+            express,
+            international
+        };
+
+        foreach (ITrackable shipment in trackableShipments)
+        {
+            Console.WriteLine(shipment.GetTrackingStatus());
+        }
+
+
+
+
+
+        Console.WriteLine("\nInsurance Using IInsurable Array:");
+
+        IInsurable[] insurableShipments =
+        {
+            standard,
+            express,
+            international
+        };
+
+        foreach (IInsurable shipment in insurableShipments)
+        {
+            Console.WriteLine(shipment.CalculateInsurance());
+        }
 
 
 
@@ -306,4 +359,7 @@ internal class Program
 
 
     }
+
+
+
 }
