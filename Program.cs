@@ -7,6 +7,52 @@ internal class Program
     static void Main(string[] args)
     {
 
+
+
+
+        /*
+               Q1) 
+                  
+                   a- Abstraction is concept that hide unnecessary implementation details
+                      and shows only the essential features
+           
+                   b- reduces complexity, hides unnecessary implementation details
+
+
+
+               Q2) 
+                  
+                   a-  (abstract) : class is a base class can contain abstract members,fields,properties
+
+                       (interface) : defines a contract that specifies what a class must do and 
+                       one class can implement multiple interfaces
+           
+
+
+                   b- choose an interface when different classes need to share the same behavior 
+
+                  
+
+                   c- No  class cannot inherit from multiple abstract classes 
+                      because C# does not support multiple class inheritance. 
+        
+                      but a class can implement multiple interfaces.
+
+
+
+
+
+
+
+
+        */
+
+
+
+
+
+
+
         DeliveryCenter center = new DeliveryCenter();  // object 
 
         Console.Write("Enter Center Name: ");
